@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keerthana Manikandan | Portfolio</title>
+
+  <!-- AOS Animate on Scroll -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Times New Roman', serif;
+      color: #d3d3d3;
+      background: #0f0f0f;
+      line-height: 1.7;
+    }
+
+    /* Animated background */
+    body {
+  background: url('vecteezy_abstract-black-wave-shape-background-vector_9647855.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      height: 100vh;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 3.5em;
+      color: #f5f5f5;
+      font-weight: bold;
+      font-style: italic;
+      letter-spacing: 2px;
+      animation: slideDown 1.5s ease-out;
+    }
+    header p {
+      margin-top: 15px;
+      font-size: 1.3em;
+      color: #b5b5b5;
+      max-width: 700px;
+      animation: fadeInUp 2s ease-in-out;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      background: rgba(15,15,15,0.9);
+      display: flex; justify-content: center;
+      padding: 15px;
+      z-index: 1000;
+      backdrop-filter: blur(6px);
+    }
+    nav a {
+      color: #e0e0e0;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-style: italic;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: -5px;
+      background: #d3d3d3;
+      transition: width 0.3s;
+    }
+    nav a:hover { color: #fff; }
+    nav a:hover::after { width: 100%; }
+
+    section {
+      padding: 100px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    #about {
+      background: #1a1a1a;
+      border-radius: 15px;
+      padding: 50px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.6);
+      text-align: center;
+    }
+
+    #about img {
+      width: 170px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 3px solid #999;
+      box-shadow: 0 0 20px rgba(255,255,255,0.1);
+      transition: transform 0.4s ease;
+    }
+    #about img:hover { transform: scale(1.1) rotate(2deg); }
+
+    h2 { 
+      margin-bottom: 25px; 
+      color: #e6e6e6; 
+      font-size: 2.2em;
+      font-weight: bold;
+      font-style: italic;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #888;
+      margin: 10px auto 0;
+    }
+
+    #projects ul { list-style: none; }
+    #projects li {
+      background: #2a2a2a;
+      padding: 18px;
+      margin: 12px 0;
+      border-radius: 12px;
+      transition: transform 0.3s, background 0.3s;
+    }
+    #projects li:hover {
+      transform: translateX(12px) scale(1.02);
+      background: #3a3a3a;
+    }
+
+    #resume a {
+      display: inline-block;
+      background: #444;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      color: #f0f0f0;
+      font-weight: bold;
+      font-style: italic;
+      transition: background 0.3s, transform 0.3s;
+    }
+    #resume a:hover {
+      background: #666;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: #888;
+      font-size: 0.9em;
+      font-style: italic;
+    }
+
+    /* Animations */
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    @keyframes fadeInUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <header>
+    <h1>Hello, I’m Keerthana 👋</h1>
+    <p>Engineering graduate skilled in Web Development and Embedded Systems, aiming to bridge software and hardware to create efficient, user-centric solutions.</p>
+  </header>
+
+  <!-- About -->
+  <section id="about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <img src="IMG_2724.jpg" alt="Keerthana">
+    <p>
+      I am <b><i>Keerthana Manikandan</i></b>, a recent graduate in <i>Electronics and Communication Engineering</i> from
+      Kamaraj College of Engineering and Technology, affiliated with Anna University, India, with a CGPA of
+      <b>8.02/10 (April 2025)</b>. I am strongly motivated to advance my expertise in
+      electronic systems and embedded technologies. I’m seeking internship opportunities to apply my knowledge and grow.
+    </p>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" data-aos="fade-right">
+    <h2>Projects</h2>
+    <p>My academic projects demonstrate my ability to apply theory to practical innovation. 
+        My final-year project, Design and Implementation of an Unmanned Remote-Control Coconut Tree Climbing and Harvesting Robot, combined motor control systems, wireless communication, and sensor integration to solve an agricultural automation challenge
+        Presenting my final-year project at the International Conference on Innovation of Materials, Science and Engineering Technology (ICIMSET – 2025) gave me valuable experience in academic communication and interdisciplinary research exposure.</p>
+    <ul>
+      <li>🌴 <b>Coconut Tree Climbing & Harvesting Robot</b> – Motor control + Wireless communication + Sensors</li>
+    </ul>
+  </section>
+
+  <!-- Resume -->
+  <section id="resume" data-aos="zoom-in">
+    <h2>Resume</h2>
+    <p><a href="Keerthana Manikandan_CV.pdf" target="_blank">📄 Download My Resume</a></p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" data-aos="fade-left">
+    <h2>Contact</h2>
+    <p>📧 keerth624@gmail.com</p>
+    <p>💻 <a href="https://github.com/Keerthana6124" target="_blank">GitHub</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Keerthana | Keerthana Manikandan portfolio⚫⚪</p>
+  </footer>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1200,
+      once: true
+    });
+  </script>
+
+</body>
+</html>
