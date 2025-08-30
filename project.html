@@ -6,48 +6,91 @@
   <title>Coconut Tree Climbing & Harvesting Robot</title>
   <style>
     body {
-      font-family: 'Times New Roman', serif;
-      font-style: italic;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-style: normal;
       background: url("coconut-tree-5288844_1920.jpg") no-repeat center center fixed;
       background-size: cover;
-      color: #f5deb3; /* soft beige for readability */
       margin: 0;
       padding: 0;
+      color: #000; /* black text */
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     header {
-      background: rgba(0, 0, 0, 0.6); /* translucent black for readability */
+      background: rgba(255, 255, 255, 0.7); /* translucent white */
       padding: 50px;
       text-align: center;
+      animation: fadeIn 1s ease-in-out;
     }
 
     header h1 {
-      font-size: 2.5rem;
-      color: #ffd700; /* golden yellow for header */
+      font-size: 2.8rem;
+      color: #2c3e50; /* deep gray */
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #444;
     }
 
     section {
       padding: 40px;
       max-width: 900px;
-      margin: auto;
-      background: rgba(0, 0, 0, 0.5); /* semi-transparent background for clarity */
-      border-radius: 10px;
-      margin-bottom: 30px;
+      margin: 30px auto;
+      background: rgba(255, 255, 255, 0.8); /* semi-white */
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      animation: fadeIn 1.2s ease-in-out;
     }
 
     section h2 {
-      color: #ffa500; /* orange-gold for subheadings */
+      color: #2c3e50;
       margin-bottom: 15px;
       text-align: center;
     }
 
+    section p, li {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #000;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin: 10px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #16a085;
+    }
+
     .methodology img {
       display: block;
-      margin: 0 auto;
-      width: 60%; /* smaller, like gallery */
-      max-width: 300px;
+      margin: 20px auto;
+      width: 60%;
+      max-width: 320px;
       border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.6);
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .methodology img:hover {
+      transform: scale(1.05);
     }
 
     .gallery {
@@ -60,37 +103,51 @@
     .gallery .item {
       max-width: 250px;
       text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .gallery img {
       width: 100%;
       border-radius: 8px;
       margin-bottom: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.6);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
     }
 
-    .gallery p {
-      font-size: 0.95rem;
-      color: #f5deb3;
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+
+    .gallery .item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.5);
     }
 
     video {
       width: 100%;
       border-radius: 10px;
       margin-top: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      background: rgba(0, 0, 0, 0.8);
-      margin-top: 40px;
-      color: #d2b48c; /* tan color */
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+      font-size: 0.95rem;
+      animation: fadeIn 1.4s ease-in-out;
     }
 
     a {
-      color: #ffd700;
+      color: #16a085;
+      font-weight: bold;
       text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #e67e22;
     }
   </style>
 </head>
@@ -106,19 +163,8 @@
       Coconut harvesting is a labour-intensive and hazardous task, often requiring skilled
       climbers to scale tall trees. To address this challenge, this project focuses on the design
       and implementation of an unmanned remote-controlled coconut tree climbing and
-      harvesting robot. The proposed system consists of a mechanized climbing mechanism,
-      a cutting tool, and a wireless control interface, enabling safe and eﬃcient harvesting.
-      The robot employs a motorized gripping and climbing system that adapts to varying
-      trunk diameters and surface irregularities. A remote-controlled cutting arm is
-      integrated to ensure precise harvesting without damaging the tree. The system is
-      designed with lightweight yet durable materials to enhance mobility and eﬃciency.
-      Field tests were conducted to evaluate the robot’s climbing stability, cutting eﬃciency,
-      battery performance, and operational feasibility. Results indicate that the robot
-      successfully ascends coconut trees, performs controlled cutting, and descends safely,
-      reducing human eﬀort and risk. Performance comparisons with traditional methods
-      highlight improvements in safety, speed, and reliability. This innovation presents a
-      promising solution for automated coconut harvesting, reducing dependence on manual
-      labour while ensuring sustainability and productivity in the agricultural sector.
+      harvesting robot. The system consists of a mechanized climbing mechanism, a cutting tool,
+      and a wireless control interface, enabling safe and efficient harvesting.
     </p>
   </section>
 
@@ -130,12 +176,18 @@
   </section>
 
   <section>
-    <h2>Features</h2>
+    <h2>🌴Features</h2>
     <ul>
-      <li>🕹 Remote-controlled navigation</li>
-      <li>⚙️ Motorized climbing system</li>
-      <li>🌐 Wireless communication</li>
-      <li>🔋 Battery-powered with efficient energy use</li>
+1. Tree Climbing Mechanism – Designed with grippers/rollers to climb tall and slender coconut trees safely.
+2. Automated Harvesting Arm – Equipped with a cutting tool (saw/blade) to detach coconuts.
+3. Remote/IoT Control – Operated wirelessly via remote control or mobile application.
+4. Stability & Balance – Self-adjusting mechanism to grip different tree diameters firmly.
+5. Energy Source – Powered by rechargeable battery/solar-assisted system for field usability.
+6. Camera/ Sensor Assistance – Camera or sensors help identify coconuts and ensure safe cutting.
+7. Safety Mechanism – Prevents accidental falls with locking system or backup support.
+8. Harvest Collection – Provision to hold or drop coconuts safely without damage.
+9. Compact & Portable Design – Lightweight structure for easy transport between farms.
+10. Cost-Effective Alternative – Reduces reliance on manual climbers, increasing efficiency and safety.
     </ul>
   </section>
 
